@@ -1,0 +1,81 @@
+/* ============================================================
+   MAQAṢṢ // NEO-BRUTALIST DESIGN TOKENS
+   Bone + Carbon + Acid Lime. Single family. Zero radius.
+   ============================================================ */
+
+:root {
+  /* — Color: brutalist, single accent ———————————————————————— */
+  --bone:    #F2EFE6;   /* warm off-white page bg */
+  --bone-2:  #E7E3D6;   /* alt section bg */
+  --carbon:  #0E0E0C;   /* near-black ink */
+  --carbon-2:#1A1A18;   /* alt dark */
+  --steel:   #B6B2A6;   /* tertiary text */
+  --mist:    #D6D2C5;   /* faint dividers (rarely used; prefer 2px solid carbon) */
+  --lime:         #524537;   /* the accent — warm dark taupe */
+  --lime-2:       #3D3328;   /* deeper for hover */
+  --lime-on-dark: #B09C82;   /* lighter muted warm tan — used where the accent sits on carbon */
+  --blood:        #C8281A;   /* destructive only */
+
+  /* — Type — single family, used at extreme size deltas ——— */
+  --font-display: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --font-body:    'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-ar:      'Noto Kufi Arabic', system-ui, sans-serif;
+
+  --track-display: -0.03em;     /* tight on huge type */
+  --track-meta:     0.12em;     /* uppercase signage spacing */
+  --track-body:     0;
+
+  /* — Spacing (rigid 8pt) ————————————————————————————————— */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10:128px;
+  --s-11:160px;
+
+  /* — Radius: ZERO. Pills only for one specific element ——— */
+  --r-zero: 0px;
+
+  /* — Borders ————————————————————————————————————————————— */
+  --bw-1: 1px;          /* hairline */
+  --bw-2: 2px;          /* default brutalist */
+  --bw-3: 4px;          /* emphasis */
+
+  /* — Motion: cuts, not fades ————————————————————————————— */
+  --ease-snap: cubic-bezier(0.8, 0, 0.2, 1);
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-instant: 80ms;
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-reveal: 600ms;
+
+  /* — Layout ————————————————————————————————————————————— */
+  --page-max: 1440px;
+  --gutter: 32px;
+  --header-h: 64px;
+  --bottom-tab-h: 64px;
+
+  /* — Z-index ————————————————————————————————————————————— */
+  --z-header: 50;
+  --z-overlay: 80;
+  --z-modal: 100;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 18px;
+    --header-h: 56px;
+    /* Aggressive mobile compaction — shorter sections, less whitespace */
+    --s-7:  32px;     /* was 48 */
+    --s-8:  44px;     /* was 64 */
+    --s-9:  56px;     /* was 96 */
+    --s-10: 64px;     /* was 128 — cut in half */
+    --s-11: 80px;     /* was 160 */
+  }
+}

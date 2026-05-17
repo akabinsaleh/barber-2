@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SERVICES // MAQAṢṢ</title>
+  <meta name="theme-color" content="#F2EFE6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
+
+  <div class="system-bar" role="presentation">
+    <div class="shell">
+      <span class="system-bar__item"><span class="system-bar__dot"></span><span data-i18n="sys.open">OPEN NOW · UNTIL 21:00</span></span>
+      <span class="system-bar__item" data-i18n="sys.loc">RIYADH // 24.7136° N, 46.6753° E</span>
+      <span class="system-bar__item" data-i18n="sys.year">[ MAQ // 2026 ]</span>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand-mark" aria-label="Maqaṣṣ — home">
+        <span class="brand-mark__box" aria-hidden="true">M</span>
+        <span>MAQAṢṢ</span>
+        <span class="brand-mark__sub">EST · 2014</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary">
+        <a href="index.html"    data-nav="home"     data-i18n="nav.home">Home</a>
+        <a href="services.html" data-nav="services" data-i18n="nav.services">Services</a>
+        <a href="book.html"     data-nav="book"     data-i18n="nav.book">Reserve</a>
+        <a href="mine.html"     data-nav="mine"     data-i18n="nav.mine">My Bookings</a>
+      </nav>
+      <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
+        <span data-i18n="nav.lang">العربية</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" style="padding-block-start: var(--s-9);">
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="section-head__num">02 //</span>
+          <h1 class="section-head__title" data-i18n="services.title">The menu</h1>
+          <span class="meta section-head__cta" data-i18n="services.count">5 SERVICES // PICK ONE OR MANY</span>
+        </div>
+      </div>
+      <div class="shell" style="padding-inline: 0;">
+        <div class="services-table" id="services-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-band reveal">
+      <div class="shell">
+        <h2 data-i18n="home.cta2.title">Walk in. Walk out sharper.</h2>
+        <p data-i18n="home.cta2.sub">Pick your barber, your time, your service. Done in under a minute.</p>
+        <a href="book.html" class="btn btn--primary btn--xl">
+          <span data-i18n="home.cta2.button">Start booking</span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <div class="shell">
+        <div><div class="footer-col__brand">MAQAṢṢ</div><p class="meta" style="color: var(--lime);" data-i18n="footer.craft">Est · 2014 · Riyadh</p></div>
+        <div class="footer-col"><h4 data-i18n="footer.hours">Hours</h4><p id="footer-hours"></p></div>
+        <div class="footer-col"><h4 data-i18n="footer.find">Find Us</h4><p id="footer-address"></p></div>
+        <div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><p id="footer-phone"></p></div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="shell">
+        <span data-i18n="footer.legal">© 2026 MAQAṢṢ // ALL RIGHTS RESERVED</span>
+        <span>RIYADH · KSA</span>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-tabs" aria-label="Primary mobile">
+    <a href="index.html" data-nav="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1Z"/></svg><span data-i18n="nav.home">Home</span></a>
+    <a href="services.html" data-nav="services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span data-i18n="nav.services">Services</span></a>
+    <a href="book.html" data-nav="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="0"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span data-i18n="nav.book">Reserve</span></a>
+    <a href="mine.html" data-nav="mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4Z"/><path d="M14 7v10"/></svg><span data-i18n="nav.mine">My Bookings</span></a>
+  </nav>
+
+  <script type="module">
+    import { SERVICES, BRAND, formatPrice } from './js/data.js';
+    import { getLang, t } from './js/i18n.js';
+    import './js/app.js';
+
+    function paintServices() {
+      const lang = getLang();
+      const root = document.getElementById('services-list');
+      root.innerHTML = SERVICES.map((s, i) => `
+        <a href="book.html?service=${s.id}" class="svc-row reveal" data-delay="${i * 60}">
+          <span class="svc-row__num">${String(i + 1).padStart(2, '0')}</span>
+          <h3 class="svc-row__name">${s[lang].name}</h3>
+          <p class="svc-row__desc">${s[lang].desc}</p>
+          <div class="svc-row__meta">${s.duration} ${t('services.duration')}</div>
+          <div class="svc-row__price">${formatPrice(s.price, lang)}</div>
+          <div class="svc-row__cta" data-i18n="services.book">Reserve</div>
+        </a>
+      `).join('');
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.reveal:not(.is-in)').forEach((el, i) => setTimeout(() => el.classList.add('is-in'), i * 50));
+      });
+    }
+
+    function paintFooter() {
+      const lang = getLang();
+      document.getElementById('footer-hours').innerHTML = BRAND.hours[lang].replace(/·/g, '<br/>');
+      document.getElementById('footer-address').textContent = BRAND.address[lang];
+      document.getElementById('footer-phone').textContent = BRAND.phone;
+    }
+
+    paintServices();
+    paintFooter();
+    window.addEventListener('languagechange', () => { paintServices(); paintFooter(); });
+  </script>
+</body>
+</html>

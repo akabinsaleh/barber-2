@@ -1,0 +1,13 @@
+# Local dev / OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Verification artifacts
+*.png.tmp
+.playwright-mcp/

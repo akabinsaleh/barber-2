@@ -1,0 +1,41 @@
+/* ============================================================
+   MAQAṢṢ // RTL OVERRIDES
+   Most flips for free via logical properties.
+   Only put TRULY direction-only stuff here.
+   ============================================================ */
+
+html[dir="rtl"] body { font-family: var(--font-ar); }
+
+/* Numeric runs stay LTR */
+html[dir="rtl"] .booking-row__id,
+html[dir="rtl"] .confirm__id,
+html[dir="rtl"] .svc-row__price,
+html[dir="rtl"] .pick-row__price,
+html[dir="rtl"] .progress__total-value,
+html[dir="rtl"] .time-cell,
+html[dir="rtl"] .barber-pick__id,
+html[dir="rtl"] .console__row-price,
+html[dir="rtl"] .svc-teaser__price {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Brand wordmark — Latin part stays LTR */
+html[dir="rtl"] .brand-mark { direction: ltr; }
+html[dir="rtl"] .brand-mark__sub { display: none; }
+html[dir="rtl"] .footer-col__brand { direction: ltr; }
+
+/* Lime highlight on hero italic */
+html[lang="ar"] .hero__title em {
+  background: var(--lime);
+  color: var(--carbon);
+  font-style: normal;
+}
+
+/* Arabic display type runs much taller — scale the hero down significantly */
+html[lang="ar"] .hero__title { font-size: clamp(44px, 9vw, 132px); line-height: 1.15; }
+html[lang="ar"] .cta-band h2 { font-size: clamp(36px, 6vw, 96px); line-height: 1.15; }
+html[lang="ar"] .step__title { font-size: clamp(26px, 3.6vw, 52px); line-height: 1.2; }
+html[lang="ar"] .section-head__title { font-size: clamp(22px, 3vw, 44px); line-height: 1.15; }
+html[lang="ar"] .hero__title .line--shift { padding-inline-start: 0; }
+html[lang="ar"] .hero { padding-block-start: var(--s-8); }

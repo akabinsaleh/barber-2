@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>RESERVE // MAQAṢṢ</title>
+  <meta name="theme-color" content="#F2EFE6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
+
+  <div class="system-bar" role="presentation">
+    <div class="shell">
+      <span class="system-bar__item"><span class="system-bar__dot"></span><span data-i18n="sys.open">OPEN NOW · UNTIL 21:00</span></span>
+      <span class="system-bar__item" data-i18n="sys.loc">RIYADH // 24.7136° N, 46.6753° E</span>
+      <span class="system-bar__item" data-i18n="sys.year">[ MAQ // 2026 ]</span>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand-mark" aria-label="Maqaṣṣ — home">
+        <span class="brand-mark__box" aria-hidden="true">M</span>
+        <span>MAQAṢṢ</span>
+        <span class="brand-mark__sub">EST · 2014</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary">
+        <a href="index.html"    data-nav="home"     data-i18n="nav.home">Home</a>
+        <a href="services.html" data-nav="services" data-i18n="nav.services">Services</a>
+        <a href="book.html"     data-nav="book"     data-i18n="nav.book">Reserve</a>
+        <a href="mine.html"     data-nav="mine"     data-i18n="nav.mine">My Bookings</a>
+      </nav>
+      <button class="lang-toggle" data-lang-toggle aria-label="Switch language">
+        <span data-i18n="nav.lang">العربية</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" style="padding-block-start: var(--s-7);">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="section-head__num">// 03</span>
+        <h1 class="section-head__title" data-i18n="book.title">Pick your chair.</h1>
+        <span class="meta section-head__cta" data-i18n="book.eyebrow">RESERVATION // 4 STEPS</span>
+      </div>
+    </div>
+
+    <div class="shell" style="padding-inline: 0;">
+      <div class="book-grid">
+        <!-- ============ Progress sidebar ============ -->
+        <aside class="progress" aria-label="Booking progress">
+          <div class="progress__head">
+            <span class="system-bar__dot" aria-hidden="true"></span>
+            <span data-i18n="book.progress.heading">Your Selection</span>
+          </div>
+          <ol class="progress__list" id="progress-list">
+            <li class="progress__item progress__item--current" data-progress-step="1" aria-current="step">
+              <span class="progress__num">01</span>
+              <div>
+                <div class="progress__label" data-i18n="book.step.1.label">Service</div>
+                <div class="progress__value" data-progress-value="1" data-i18n="book.progress.empty">Not yet chosen</div>
+              </div>
+            </li>
+            <li class="progress__item" data-progress-step="2">
+              <span class="progress__num">02</span>
+              <div>
+                <div class="progress__label" data-i18n="book.step.2.label">Barber</div>
+                <div class="progress__value" data-progress-value="2" data-i18n="book.progress.empty">Not yet chosen</div>
+              </div>
+            </li>
+            <li class="progress__item" data-progress-step="3">
+              <span class="progress__num">03</span>
+              <div>
+                <div class="progress__label" data-i18n="book.step.3.label">Date &amp; Time</div>
+                <div class="progress__value" data-progress-value="3" data-i18n="book.progress.empty">Not yet chosen</div>
+              </div>
+            </li>
+            <li class="progress__item" data-progress-step="4">
+              <span class="progress__num">04</span>
+              <div>
+                <div class="progress__label" data-i18n="book.step.4.label">Your Details</div>
+                <div class="progress__value" data-progress-value="4" data-i18n="book.progress.empty">Not yet chosen</div>
+              </div>
+            </li>
+          </ol>
+
+          <div class="progress__total">
+            <span class="progress__total-label" data-i18n="book.progress.total">Total</span>
+            <span class="progress__total-value" id="progress-total">0</span>
+          </div>
+        </aside>
+
+        <!-- ============ Step content ============ -->
+        <div class="step-area" id="step-content">
+
+          <!-- Step 1: Services -->
+          <section class="step is-active" data-step="1">
+            <div class="step__head">
+              <div class="step__num">[ 01 ] // <span data-i18n="book.step.1.label">Service</span></div>
+              <h2 class="step__title" data-i18n="book.step.1.title">Choose one or more services.</h2>
+              <p class="step__hint" data-i18n="book.step.1.hint">Tap to select · combine freely.</p>
+            </div>
+            <div class="pick-list" id="services-pick" aria-live="polite"></div>
+          </section>
+
+          <!-- Step 2: Barber -->
+          <section class="step" data-step="2">
+            <div class="step__head">
+              <div class="step__num">[ 02 ] // <span data-i18n="book.step.2.label">Barber</span></div>
+              <h2 class="step__title" data-i18n="book.step.2.title">Whose hands?</h2>
+              <p class="step__hint" data-i18n="book.step.2.hint">We advance automatically.</p>
+            </div>
+            <div class="barber-grid" id="barbers-pick" aria-live="polite"></div>
+          </section>
+
+          <!-- Step 3: Date & Time -->
+          <section class="step" data-step="3">
+            <div class="step__head">
+              <div class="step__num">[ 03 ] // <span data-i18n="book.step.3.label">Date &amp; Time</span></div>
+              <h2 class="step__title" data-i18n="book.step.3.title">When works?</h2>
+            </div>
+
+            <div class="date-section">
+              <div class="date-bar">
+                <div class="date-bar__month" id="date-month">MAY</div>
+                <div class="date-bar__nav">
+                  <button class="date-arrow" data-date-prev aria-label="Previous days">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <button class="date-arrow" data-date-next aria-label="Next days">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="date-strip" id="date-strip" role="listbox" aria-label="Pick a date"></div>
+            </div>
+
+            <div id="time-blocks" aria-live="polite"></div>
+          </section>
+
+          <!-- Step 4: Details -->
+          <section class="step" data-step="4">
+            <div class="step__head">
+              <div class="step__num">[ 04 ] // <span data-i18n="book.step.4.label">Your Details</span></div>
+              <h2 class="step__title" data-i18n="book.step.4.title">Just three things.</h2>
+            </div>
+
+            <form class="form-stack" id="details-form" novalidate>
+              <div class="field">
+                <label class="field__label" for="f-name" data-i18n="book.step.4.name">Full name</label>
+                <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required data-i18n-attr="placeholder:book.step.4.name.ph" />
+                <div class="field__error" id="err-name"></div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="f-phone" data-i18n="book.step.4.phone">Phone number</label>
+                <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" required pattern="^[+\d][\d\s\-]{7,15}$" inputmode="tel" data-i18n-attr="placeholder:book.step.4.phone.ph" />
+                <div class="field__error" id="err-phone"></div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="f-notes" data-i18n="book.step.4.notes">Notes (optional)</label>
+                <textarea class="field__textarea" id="f-notes" name="notes" rows="3" data-i18n-attr="placeholder:book.step.4.notes.ph"></textarea>
+              </div>
+            </form>
+          </section>
+
+          <!-- Step navigation -->
+          <div class="step-actions" id="step-actions">
+            <button class="btn btn--quiet" data-step-back hidden>
+              <span data-i18n="book.back">Back</span>
+            </button>
+            <div class="step-actions__spacer"></div>
+            <button class="btn btn--primary btn--xl" data-step-next disabled>
+              <span id="next-label" data-i18n="book.continue">Continue</span>
+              <span class="arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </button>
+          </div>
+
+          <!-- Confirmation -->
+          <section class="confirm" id="confirm">
+            <span class="confirm__mark">
+              <span class="system-bar__dot" aria-hidden="true" style="background: var(--carbon);"></span>
+              <span data-i18n="book.done.eyebrow">Reserved</span>
+            </span>
+            <h2 data-i18n="book.done.title">You're on the books.</h2>
+            <p data-i18n="book.done.sub">We saved this on your device. Bring the reference if you like — we will already know your name.</p>
+            <div class="confirm__id-row">
+              <div>
+                <div class="confirm__id-label" data-i18n="book.done.id">Reference</div>
+                <div class="confirm__id" id="confirm-id">BK-XXXXXXXX</div>
+              </div>
+            </div>
+            <div class="confirm__cta">
+              <button class="btn btn--quiet btn--xl" id="another-btn">
+                <span data-i18n="book.done.cta.another">Book another</span>
+              </button>
+              <a class="btn btn--primary btn--xl" href="mine.html">
+                <span data-i18n="book.done.cta.mine">See my bookings</span>
+                <span class="arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <div class="shell">
+        <div><div class="footer-col__brand">MAQAṢṢ</div><p class="meta" style="color: var(--lime);" data-i18n="footer.craft">Est · 2014 · Riyadh</p></div>
+        <div class="footer-col"><h4 data-i18n="footer.hours">Hours</h4><p id="footer-hours"></p></div>
+        <div class="footer-col"><h4 data-i18n="footer.find">Find Us</h4><p id="footer-address"></p></div>
+        <div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><p id="footer-phone"></p></div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="shell">
+        <span data-i18n="footer.legal">© 2026 MAQAṢṢ // ALL RIGHTS RESERVED</span>
+        <span>RIYADH · KSA</span>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-tabs" aria-label="Primary mobile">
+    <a href="index.html" data-nav="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1Z"/></svg><span data-i18n="nav.home">Home</span></a>
+    <a href="services.html" data-nav="services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span data-i18n="nav.services">Services</span></a>
+    <a href="book.html" data-nav="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="0"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span data-i18n="nav.book">Reserve</span></a>
+    <a href="mine.html" data-nav="mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4Z"/><path d="M14 7v10"/></svg><span data-i18n="nav.mine">My Bookings</span></a>
+  </nav>
+
+  <script type="module">
+    import { BRAND } from './js/data.js';
+    import { getLang } from './js/i18n.js';
+    import './js/app.js';
+    import './js/book.js';
+
+    function paintFooter() {
+      const lang = getLang();
+      document.getElementById('footer-hours').innerHTML = BRAND.hours[lang].replace(/·/g, '<br/>');
+      document.getElementById('footer-address').textContent = BRAND.address[lang];
+      document.getElementById('footer-phone').textContent = BRAND.phone;
+    }
+    paintFooter();
+    window.addEventListener('languagechange', paintFooter);
+  </script>
+</body>
+</html>
