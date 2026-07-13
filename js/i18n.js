@@ -1,9 +1,13 @@
 // ============================================================
 // Maqaṣṣ Atelier — i18n
 // Single dictionary covering every static UI string in EN + AR.
-// setLanguage(lang) flips <html lang/dir>, persists to localStorage,
-// and re-paints all [data-i18n] elements. Dynamic UI (booking flow,
-// service list, etc.) listens for the 'languagechange' event.
+// Default language is Arabic (ar). We ONLY remember a language when
+// the visitor explicitly clicks the toggle — that choice is stored
+// under 'langChosen'. The old auto-saved 'lang' key is ignored so a
+// stale 'en' can never override the Arabic default for new visitors.
+// setLanguage(lang) flips <html lang/dir>, persists the explicit
+// choice, and re-paints all [data-i18n] elements. Dynamic UI (booking
+// flow, service list, etc.) listens for the 'languagechange' event.
 // ============================================================
 
 const DICT = {
@@ -55,6 +59,7 @@ const DICT = {
 
   // Services page
   'services.eyebrow':   { en: 'The menu',             ar: 'القائمة' },
+  'services.count':     { en: '5 SERVICES // PICK ONE OR MANY', ar: '٥ خدمات · اختر واحدة أو أكثر' },
   'services.title':     { en: 'Five services. Pick one, pick a few.', ar: 'خمس خدمات. اختر واحدة، أو عدّة.' },
   'services.duration':  { en: 'min',                  ar: 'دقيقة' },
   'services.book':      { en: 'Reserve',              ar: 'احجز' },
@@ -141,7 +146,10 @@ export const MONTHS_LONG = {
 
 // ——— Public API ———————————————————————————————————————————————
 
-let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 'en';
+// Default to Arabic. Only an explicit toggle click (stored under
+// 'langChosen') changes this — the legacy 'lang' key is deliberately
+// never read, so a previously auto-saved value can't win.
+let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem('langChosen')) || 'ar';
 
 export function getLang() { return currentLang; }
 
@@ -154,7 +162,8 @@ export function t(key) {
 export function setLanguage(lang) {
   if (lang !== 'en' && lang !== 'ar') return;
   currentLang = lang;
-  try { localStorage.setItem('lang', lang); } catch {}
+  // Remember ONLY explicit user choices, under a dedicated key.
+  try { localStorage.setItem('langChosen', lang); } catch {}
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   paint();

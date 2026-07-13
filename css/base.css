@@ -43,7 +43,10 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, 
   letter-spacing: 0;
   text-transform: none;
   font-weight: 700;
-  line-height: 1.0;
+  /* Arabic needs more leading than the Latin display face — 1.0 clipped
+     diacritics/descenders on Arabic headings. Per-heading overrides in
+     rtl.css tune the largest display type further. */
+  line-height: 1.25;
 }
 
 h1 { font-size: clamp(64px, 14vw, 240px); font-weight: 700; }

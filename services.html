@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -111,7 +111,7 @@
           <p class="svc-row__desc">${s[lang].desc}</p>
           <div class="svc-row__meta">${s.duration} ${t('services.duration')}</div>
           <div class="svc-row__price">${formatPrice(s.price, lang)}</div>
-          <div class="svc-row__cta" data-i18n="services.book">Reserve</div>
+          <div class="svc-row__cta">${t('services.book')}</div>
         </a>
       `).join('');
       requestAnimationFrame(() => {
